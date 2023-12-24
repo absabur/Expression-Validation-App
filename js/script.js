@@ -17,7 +17,7 @@ let inputList = [email, phone, date, url, card, hex, form]
 document.querySelector("body")?.addEventListener("click", ()=> {
     inputList.forEach(item => {
         if (item.value == "") {
-            item.parentElement.nextElementSibling.innerHTML = "";
+            item.parentElement.nextElementSibling.innerHTML = ".";
         }
     })
 })
@@ -25,8 +25,9 @@ document.querySelector("body")?.addEventListener("click", ()=> {
 const validate = (exp, field) => {
     let valid = exp.test(field.value);
     let messageElement = field?.parentElement?.nextElementSibling;
+    messageElement.innerHTML = "."
     if (field.value == ""){
-        messageElement.innerHTML = ""
+        messageElement.innerHTML = "."
     }else{
         let expression;
         if (field === email) expression = "Email"
@@ -36,11 +37,15 @@ const validate = (exp, field) => {
         if (field === card) expression = "Credit Card Number"
         if (field === hex) expression = "Colour Code"
         if (valid) {
-          messageElement.innerHTML = "Valid "+expression
-          messageElement.style.color = "rgb(0, 100, 0)"
+            setTimeout(() => {
+                messageElement.innerHTML = "Valid "+expression
+                messageElement.style.color = "rgb(0, 100, 0)"
+            }, 30);
         }else{
-          messageElement.innerHTML = expression+ " Is Invalid!"
-          messageElement.style.color = "red"
+            setTimeout(() => {
+                messageElement.innerHTML = expression+ " Is Invalid!"
+                messageElement.style.color = "red"
+            }, 30);
         }
     }
 }
