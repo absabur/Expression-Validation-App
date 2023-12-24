@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+h1{
+    background-color: rgb(154, 255, 223);
+    padding: 20px 5px;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+p{
+    font-weight: 600;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container > div{
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    background-color: rgb(224, 255, 253);
+    box-shadow: 0 0 5px black;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+input, button{
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+input:focus {
+    background-color: rgb(6, 6, 6);
+    color: white;
+  }
